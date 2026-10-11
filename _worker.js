@@ -416,7 +416,7 @@ export default {
         }
 
         const successMessage = await getVerificationSuccessMessage();
-        await sendMessageToUser(chatId, `👋 *欢迎使用凉心的传话筒*\n\n` +
+        await sendMessageToUser(chatId, `👋 *欢迎使用凌的传话筒*\n\n` +
               `📝 请使用礼貌用语进行对话\n` +
               `⏱ 管理员看到消息会及时回复\n\n` +
               `*温馨提示：请保持耐心，避免重复发送相同消息*`);
@@ -599,14 +599,14 @@ export default {
       const userRawEnabled = (await getSetting('user_raw_enabled', env.D1)) === 'true';
       if (!userRawEnabled) return '验证成功！您现在可以与我聊天。';
 
-      const response = await fetch('https://raw.githubusercontent.com/52Lxcloud/TGChatBot/refs/heads/master/CFTeleTrans/start.md');
+      const response = await fetch('https://raw.githubusercontent.com/u12138yyt/TGChatBot/TGChatBot/refs/heads/master/CFTeleTrans/start.md');
       if (!response.ok) return '验证成功！您现在可以与我聊天。';
       const message = await response.text();
       return message.trim() || '验证成功！您现在可以与我聊天。';
     }
 
     async function getNotificationContent() {
-      const response = await fetch('https://raw.githubusercontent.com/52Lxcloud/TGChatBot/refs/heads/master/CFTeleTrans/notification.md');
+      const response = await fetch('https://raw.githubusercontent.com/u12138yyt/TGChatBot/TGChatBot/refs/heads/master/CFTeleTrans/notification.md');
       if (!response.ok) return '';
       const content = await response.text();
       return content.trim() || '';
